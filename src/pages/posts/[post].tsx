@@ -3,7 +3,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 import hydrate from "next-mdx-remote/hydrate";
 import matter from "gray-matter";
-import { fetchPostContent } from "../../lib/posts";
+import { fetchPostContent, PostContent } from "../../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
@@ -21,9 +21,13 @@ export type Props = {
   source: MdxRemote.Source;
 };
 
+interface PostContentObj {
+  [key: string] : PostContent;
+}
+
 const components = { YouTube };
 const slugToPostContent = (postContents => {
-  let hash = {}
+  let hash: PostContentObj = {}
   postContents.forEach(it => hash[it.slug] = it)
   return hash;
 })(fetchPostContent());
