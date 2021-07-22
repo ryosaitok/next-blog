@@ -1,0 +1,16 @@
+{
+    "base_url": "http://ryosaitok.work",
+    "site_title": "Ryo Saito Tech Blog",
+    "site_description": "Programming and Web Services",
+    "site_keywords": [
+        {
+            "keyword": "Programming"
+        },
+        {
+            "keyword": "Web Service"
+        }
+    ],
+    "posts_per_page": 10,
+    "twitter_account": "@ryosaitok",
+    "github_account": "ryosaitok"
+}
